@@ -8,6 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        // Collapse menu on scroll or touch outside
+        document.addEventListener('scroll', () => {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        document.addEventListener('touchstart', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+        document.addEventListener('mousedown', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
     }
 
     // CTA Bar fade on scroll
