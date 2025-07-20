@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAKTHI Dental Clinic | Home</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- AOS Animate On Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md rounded-b-xl sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+            <a href="index.html" class="flex items-center space-x-2 font-bold text-xl">
+                <img src="../SDC Logo.png" alt="SDC Logo" class="h-10 w-auto object-contain">
+                <span><span class="text-red-600">SAKTHI</span> <span class="text-blue-700">Dental Clinic</span></span>
+            </a>
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-600">About Us</a></li>
+                <li><a href="services.html" class="hover:text-blue-600">Services</a></li>
+                <li><a href="appointment.html" class="hover:text-blue-600">Appointment</a></li>
+                <li><a href="testimonials.html" class="hover:text-blue-600">Testimonials</a></li>
+                <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+                <li><a href="faq.html" class="hover:text-blue-600">FAQs</a></li>
+            </ul>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+            <ul class="space-y-2 font-medium">
+                <li><a href="index.html" class="block hover:text-blue-600">Home</a></li>
+                <li><a href="about.html" class="block hover:text-blue-600">About Us</a></li>
+                <li><a href="services.html" class="block hover:text-blue-600">Services</a></li>
+                <li><a href="appointment.html" class="block hover:text-blue-600">Appointment</a></li>
+                <li><a href="testimonials.html" class="block hover:text-blue-600">Testimonials</a></li>
+                <li><a href="contact.html" class="block hover:text-blue-600">Contact</a></li>
+                <li><a href="faq.html" class="block hover:text-blue-600">FAQs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto py-8 px-4 md:px-0">
+        <div class="relative rounded-2xl shadow-lg overflow-hidden" id="hero-carousel"
+            aria-label="Hero Banner Carousel">
+            <div class="carousel-slides">
+                <img src="Banner-Img-1.jpg" alt="Clinic Banner 1" class="carousel-img" />
+                <img src="Banner-Img-2.jpg" alt="Clinic Banner 2" class="carousel-img" />
+                <img src="Banner-Img-3.jpg" alt="Clinic Banner 3" class="carousel-img" />
+            </div>
+            <!-- Overlayed Content -->
+            <div class="carousel-overlay flex flex-col items-center justify-center text-center px-4">
+                <h1 class="text-3xl md:text-5xl font-bold text-white drop-shadow mb-4">Specialized Dental Care for
+                    Women, Children & Families</h1>
+                <p class="text-lg md:text-xl text-white drop-shadow mb-8 max-w-2xl">Experience compassionate, expert-led
+                    dental services tailored to your needs—all in a modern and welcoming environment.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="appointment.html"
+                        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg">📅
+                        Fix an Appointment</a>
+                    <a href="tel:+919862890897"
+                        class="inline-block bg-red-600 text-white px-6 py-3 rounded-full shadow hover:bg-red-700 transition font-semibold text-lg">🆘
+                        Emergency Dental Support</a>
+                </div>
+            </div>
+            <!-- Carousel Arrows -->
+            <button class="carousel-arrow left" aria-label="Previous slide">&#8592;</button>
+            <button class="carousel-arrow right" aria-label="Next slide">&#8594;</button>
+            <!-- Carousel Dots -->
+            <div class="carousel-dots" role="tablist" aria-label="Banner navigation">
+                <button class="carousel-dot" aria-label="Go to slide 1" role="tab"></button>
+                <button class="carousel-dot" aria-label="Go to slide 2" role="tab"></button>
+                <button class="carousel-dot" aria-label="Go to slide 3" role="tab"></button>
+            </div>
+        </div>
+    </section>
+    <style>
+        #hero-carousel {
+            max-width: 900px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .carousel-slides {
+            position: relative;
+            height: 320px;
+        }
+
+        .carousel-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1);
+            border-radius: 1.5rem;
+        }
+
+        .carousel-img.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .carousel-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(30, 41, 59, 0.55) 0%, rgba(30, 41, 59, 0.25) 100%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .carousel-overlay * {
+            pointer-events: auto;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.5rem;
+            color: #23408e;
+            cursor: pointer;
+            z-index: 3;
+            transition: background 0.2s;
+        }
+
+        .carousel-arrow.left {
+            left: 1rem;
+        }
+
+        .carousel-arrow.right {
+            right: 1rem;
+        }
+
+        .carousel-arrow:focus {
+            outline: 2px solid #23408e;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            z-index: 3;
+        }
+
+        .carousel-dot {
+            width: 0.9rem;
+            height: 0.9rem;
+            border-radius: 50%;
+            border: none;
+            background: #bfcfff;
+            opacity: 0.7;
+            cursor: pointer;
+            transition: background 0.2s, opacity 0.2s;
+        }
+
+        .carousel-dot.active,
+        .carousel-dot:focus {
+            background: #23408e;
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            .carousel-slides {
+                height: 180px;
+            }
+
+            .carousel-img {
+                height: 180px;
+            }
+
+            .carousel-overlay h1 {
+                font-size: 1.3rem;
+            }
+
+            .carousel-overlay p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('#hero-carousel .carousel-img');
+            const dots = document.querySelectorAll('#hero-carousel .carousel-dot');
+            const left = document.querySelector('#hero-carousel .carousel-arrow.left');
+            const right = document.querySelector('#hero-carousel .carousel-arrow.right');
+            let current = 0, timer;
+            function showSlide(idx) {
+                slides.forEach((img, i) => img.classList.toggle('active', i === idx));
+                dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
+                current = idx;
+            }
+            function nextSlide() { showSlide((current + 1) % slides.length); }
+            function prevSlide() { showSlide((current - 1 + slides.length) % slides.length); }
+            function startAuto() { timer = setInterval(nextSlide, 4000); }
+            function stopAuto() { clearInterval(timer); }
+            dots.forEach((dot, i) => dot.addEventListener('click', () => { showSlide(i); stopAuto(); startAuto(); }));
+            left.addEventListener('click', () => { prevSlide(); stopAuto(); startAuto(); });
+            right.addEventListener('click', () => { nextSlide(); stopAuto(); startAuto(); });
+            showSlide(0); startAuto();
+            // Keyboard accessibility
+            document.getElementById('hero-carousel').addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') { prevSlide(); stopAuto(); startAuto(); }
+                if (e.key === 'ArrowRight') { nextSlide(); stopAuto(); startAuto(); }
+            });
+        });
+    </script>
+
+    <!-- Welcome Message / Assurance Banner -->
+    <section class="container mx-auto py-8 px-4 md:px-0" data-aos="fade-up">
+        <div class="bg-blue-50 rounded-2xl p-8 text-center">
+            <h2 class="text-2xl font-bold text-blue-800 mb-2">You are always in safe hands.</h2>
+            <p class="text-lg text-blue-700">We are ready to help, anytime.</p>
+        </div>
+    </section>
+
+    <!-- Why Choose SAKTHI Dental Clinic? -->
+    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Why Choose SAKTHI Dental Clinic?</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
+                <span class="text-4xl mb-4 block">🏥</span>
+                <h3 class="font-bold text-lg mb-2">All-in-One Care</h3>
+                <p class="text-gray-600">From general dentistry to specialized treatments, everything under one roof.
+                </p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
+                <span class="text-4xl mb-4 block">👨‍⚕️</span>
+                <h3 class="font-bold text-lg mb-2">Experienced Doctors</h3>
+                <p class="text-gray-600">Our dentists are professionally trained and committed to personalized patient
+                    care.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
+                <span class="text-4xl mb-4 block">❤️</span>
+                <h3 class="font-bold text-lg mb-2">Patient-Centric Approach</h3>
+                <p class="text-gray-600">We prioritize comfort, safety, and transparency in every treatment we offer.
+                </p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
+                <span class="text-4xl mb-4 block">🔬</span>
+                <h3 class="font-bold text-lg mb-2">Technology-Driven Services</h3>
+                <p class="text-gray-600">Modern tools and equipment ensure precision and safety.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Treatments -->
+    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Explore Our Services</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">🦷</span>
+                <h3 class="font-bold text-lg mb-2">Tooth Extraction</h3>
+                <p class="text-gray-600">Safe and painless removal of impacted or decayed teeth.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">🦷</span>
+                <h3 class="font-bold text-lg mb-2">Artificial Complete Denture</h3>
+                <p class="text-gray-600">Full mouth replacement to restore confidence and function.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">🦷</span>
+                <h3 class="font-bold text-lg mb-2">Tooth Filling</h3>
+                <p class="text-gray-600">Composite fillings for cavity treatment and tooth restoration.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">🪥</span>
+                <h3 class="font-bold text-lg mb-2">Teeth Cleaning or Scaling</h3>
+                <p class="text-gray-600">Preventive care to remove plaque and protect gums.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">😁</span>
+                <h3 class="font-bold text-lg mb-2">Bleaching</h3>
+                <p class="text-gray-600">Cosmetic whitening treatments for a brighter smile.</p>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
+                <span class="text-3xl mb-4 block">🦷</span>
+                <h3 class="font-bold text-lg mb-2">Orthodontic Treatment</h3>
+                <p class="text-gray-600">Braces and aligners to straighten and align teeth.</p>
+            </div>
+        </div>
+        <div class="text-center mt-8">
+            <a href="services.html"
+                class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg">View
+                Full List of Treatments</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">What Our Patients Say</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="0">
+                    <p class="text-gray-700 italic mb-4">"The doctors are extremely kind and attentive. My braces
+                        treatment is progressing really well. 5/5."</p>
+                    <p class="font-semibold text-blue-700">– Manisha M</p>
+                </div>
+                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="100">
+                    <p class="text-gray-700 italic mb-4">"I got my teeth cleaned and whitened here, and the results were
+                        amazing. The staff is so humble and professional. I've recommended SAKTHI Dental Clinic to my
+                        entire family."</p>
+                    <p class="font-semibold text-blue-700">— Mr. Arun Kumar</p>
+                </div>
+                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-gray-700 italic mb-4">"Their attention to detail is outstanding. My daughter needed
+                        braces and the entire process from consultation to regular follow ups has been so smooth. Really
+                        grateful for their care."</p>
+                    <p class="font-semibold text-blue-700">— Mrs. Revathi S.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clinic Highlights / Amenities -->
+    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Clinic Facilities</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
+                <img src="../Icon-city-center.png" alt="Location" class="w-8 h-8">
+                <div>
+                    <h3 class="font-bold">Convenient central location</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
+                <img src="../Icon-parking.png" alt="Parking" class="w-8 h-8">
+                <div>
+                    <h3 class="font-bold">Hassle-free parking</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
+                <img src="../Icon-doctors.png" alt="Doctors" class="w-8 h-8">
+                <div>
+                    <h3 class="font-bold">Doctors available daily (9 AM – 9 PM)</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
+                <img src="../Icon-pickup.png" alt="Pickup" class="w-8 h-8">
+                <div>
+                    <h3 class="font-bold">Pickup & drop-off support</h3>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
+                <img src="../Icon-wheel-chair.png" alt="Wheelchair" class="w-8 h-8">
+                <div>
+                    <h3 class="font-bold">Wheelchair access</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Floating Bar -->
+    <div id="cta-bar"
+        class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-full flex space-x-4 px-6 py-3 z-50 transition-opacity opacity-90">
+        <a href="tel:+919862890897"
+            class="flex items-center space-x-1 text-red-600 font-bold hover:underline"><span>🆘</span><span>Emergency</span></a>
+        <a href="#appointment"
+            class="flex items-center space-x-1 text-blue-600 font-bold hover:underline"><span>📅</span><span>Book
+                Now</span></a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/9862890897" target="_blank" aria-label="WhatsApp Chat" class="whatsapp-float">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g>
+                <circle cx="16" cy="16" r="16" fill="#25D366" />
+                <path
+                    d="M24.5 20.7c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2-.3.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.5-2.2-2.9-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.2-.4.3-.7.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.8-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.3 1 2.5.1.2 1.7 2.7 4.1 3.7 2.4 1 2.4.7 2.8.7.4 0 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2z"
+                    fill="#fff" />
+            </g>
+        </svg>
+        <span>Chat with us</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-16 rounded-t-2xl">
+        <div class="container mx-auto py-10 px-4 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-2">SAKTHI Dental Clinic</h3>
+                <p class="text-sm">📍 123 Smile Street, Happy Town<br>📞 +91 9862890897<br>✉️ info@SAKTHIdental.com</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About</a></li>
+                    <li><a href="services.html" class="hover:underline">Treatments</a></li>
+                    <li><button id="privacy-link"
+                            class="hover:underline text-left w-full bg-transparent p-0 m-0 text-inherit">Privacy
+                            Policy</button></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Key Treatments</h3>
+                <ul class="space-y-1 text-sm">
+                    <li>Tooth Extraction</li>
+                    <li>Complete Denture</li>
+                    <li>Tooth Filling</li>
+                    <li>Teeth Cleaning</li>
+                    <li>Bleaching</li>
+                    <li>Orthodontic Treatment</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Follow Us</h3>
+                <div class="flex space-x-3">
+                    <a href="#" class="hover:text-blue-300" title="Facebook">📘</a>
+                    <a href="#" class="hover:text-blue-300" title="Instagram">📸</a>
+                    <a href="#" class="hover:text-blue-300" title="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs py-4 bg-blue-950 rounded-b-2xl">&copy; 2024 SAKTHI Dental Clinic. All rights
+            reserved.</div>
+    </footer>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="privacy-modal-bg hidden">
+        <div class="privacy-modal-content">
+            <button id="close-privacy-modal"
+                class="absolute top-3 right-3 text-2xl text-gray-400 hover:text-blue-600 font-bold">&times;</button>
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Privacy Policy</h2>
+            <div class="text-gray-700 text-sm space-y-4">
+                <p>At SAKTHI Dental Clinic, we are committed to protecting your privacy. This Privacy Policy outlines
+                    how we collect, use, store, and disclose information from visitors and users of our website.</p>
+                <h3 class="font-bold mt-4">1. Information We Collect</h3>
+                <ul class="list-disc ml-6">
+                    <li>Visit our website</li>
+                    <li>Fill out forms (e.g contact or appointment requests)</li>
+                    <li>Engage with features, services, or resources on our site</li>
+                </ul>
+                <p>Types of information we may collect include: Name, Email address, Phone number. Users can visit our
+                    site anonymously. We only collect personal data when it is voluntarily submitted by users. Refusing
+                    to provide certain personal information may limit access to some site features or services.</p>
+                <p>We may also gather non-personal identification information, such as: Browser type, Device details,
+                    Operating system, Internet service provider, Technical data related to user interaction with the
+                    site.</p>
+                <h3 class="font-bold mt-4">2. Cookies</h3>
+                <p>Our website may use “cookies” to enhance the user experience. Cookies are small files stored on a
+                    user’s device for record-keeping purposes and to track preferences or site activity. Users can set
+                    their browser to refuse cookies or alert them when cookies are being used. Please note that
+                    disabling cookies may affect some site functionality.</p>
+                <h3 class="font-bold mt-4">3. How We Use Your Information</h3>
+                <ul class="list-disc ml-6">
+                    <li>To operate and manage the website: Ensuring content displays properly and services run smoothly.
+                    </li>
+                    <li>To improve customer service: Helping us respond to inquiries more efficiently.</li>
+                    <li>To enhance the website experience: Feedback provided may help us improve content, usability, and
+                        performance.</li>
+                    <li>To communicate via email: We may use the email address to respond to inquiries, appointments, or
+                        service updates.</li>
+                </ul>
+                <h3 class="font-bold mt-4">4. Data Security</h3>
+                <p>We implement appropriate security measures for data collection, storage, and processing to safeguard
+                    your personal information from unauthorized access, alteration, or destruction.</p>
+                <h3 class="font-bold mt-4">5. Information Sharing</h3>
+                <p>We do not sell, trade, or rent personal identification information to third parties. We may share
+                    general demographic data (not linked to any personal information) with trusted partners or
+                    affiliates to improve service delivery and site performance.</p>
+                <h3 class="font-bold mt-4">6. Children’s Privacy</h3>
+                <p>In compliance with the Children’s Online Privacy Protection Act (COPPA), we do not knowingly collect
+                    any personal information from children under the age of 13. Our site is not intended to attract
+                    users below this age group.</p>
+                <h3 class="font-bold mt-4">7. Changes to This Policy</h3>
+                <p>SAKTHI Dental Clinic may update this Privacy Policy from time to time. We encourage users to review
+                    this page periodically to stay informed about how we protect your information.</p>
+                <h3 class="font-bold mt-4">8. Acceptance of Terms</h3>
+                <p>By using this website, you agree to this policy. If you do not accept our Privacy Policy, please do
+                    not use our website. Continued use of the site following any updates will be deemed as your
+                    acceptance of the revised policy.</p>
+                <h3 class="font-bold mt-4">9. Contact Us</h3>
+                <ul class="list-none ml-0">
+                    <li class="flex items-start gap-2"><span class="text-2xl">📍</span> Address: B2/8, SBM Layout,
+                        Anthivadi, Hosur, Tamil Nadu 635109, India</li>
+                    <li class="flex items-start gap-2"><span class="text-2xl">✉️</span> Email:
+                        info@sakthidentalclinic.in</li>
+                    <li class="flex items-start gap-2"><span class="text-2xl">📞</span> Phone: +91 9862890897 / +91
+                        9363298118</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <style>
+        .privacy-modal-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
+        }
+
+        .privacy-modal-content {
+            position: relative;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 40rem;
+            width: 100%;
+            padding: 1.5rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const privacyLink = document.getElementById('privacy-link');
+            const privacyModal = document.getElementById('privacy-modal');
+            const closePrivacyModal = document.getElementById('close-privacy-modal');
+            privacyLink.addEventListener('click', function () {
+                privacyModal.classList.remove('hidden');
+            });
+            closePrivacyModal.addEventListener('click', function () {
+                privacyModal.classList.add('hidden');
+            });
+            privacyModal.addEventListener('click', function (e) {
+                if (e.target === privacyModal) privacyModal.classList.add('hidden');
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            easing: 'ease-out-cubic',
+            offset: 60
+        });
+    </script>
+</body>
+
+</html>

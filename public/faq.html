@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs | SAKTHI Dental Clinic</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AOS Animate On Scroll CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: #faf7ff;
+        }
+
+        .pastel-card {
+            background: #f6f3fa;
+        }
+
+        .pastel-cta {
+            background: #e8eafc;
+        }
+
+        .pastel-btn {
+            background: #bfcfff;
+            color: #23408e;
+        }
+
+        .pastel-btn:hover {
+            background: #a3b8f8;
+            color: #1a2e6c;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md rounded-b-xl sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-4 md:px-0">
+            <a href="index.html" class="flex items-center space-x-2 font-bold text-xl">
+                <img src="../SDC Logo.png" alt="SDC Logo" class="h-10 w-auto object-contain">
+                <span><span class="text-red-600">SAKTHI</span> <span class="text-blue-700">Dental Clinic</span></span>
+            </a>
+            <ul class="hidden md:flex space-x-8 font-medium">
+                <li><a href="index.html" class="hover:text-blue-600">Home</a></li>
+                <li><a href="about.html" class="hover:text-blue-600">About Us</a></li>
+                <li><a href="services.html" class="hover:text-blue-600">Services</a></li>
+                <li><a href="appointment.html" class="hover:text-blue-600">Appointment</a></li>
+                <li><a href="testimonials.html" class="hover:text-blue-600">Testimonials</a></li>
+                <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
+                <li><a href="faq.html" class="hover:text-blue-600">FAQs</a></li>
+            </ul>
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+            <ul class="space-y-2 font-medium">
+                <li><a href="index.html" class="block hover:text-blue-600">Home</a></li>
+                <li><a href="about.html" class="block hover:text-blue-600">About Us</a></li>
+                <li><a href="services.html" class="block hover:text-blue-600">Services</a></li>
+                <li><a href="appointment.html" class="block hover:text-blue-600">Appointment</a></li>
+                <li><a href="testimonials.html" class="block hover:text-blue-600">Testimonials</a></li>
+                <li><a href="contact.html" class="block hover:text-blue-600">Contact</a></li>
+                <li><a href="faq.html" class="block hover:text-blue-600">FAQs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FAQ Section -->
+    <section class="container mx-auto py-16 px-4 md:px-0" data-aos="fade-up">
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-10 tracking-wide" data-aos="fade-up">Frequently Asked
+            Questions</h1>
+        <div class="max-w-2xl mx-auto">
+            <div id="faq-accordion" class="space-y-6" data-aos="zoom-in">
+                <!-- FAQ Item Template -->
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>1. Can medication completely relieve tooth pain?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Not entirely. While medications may offer short-term relief, long-lasting relief requires
+                        identifying and treating the root cause of the pain through professional dental care.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>2. Does teeth scaling cause enamel damage, sensitivity, or gaps between teeth?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        No. Scaling safely removes plaque and tartar from teeth and below the gum line. It doesn’t
+                        damage enamel or create gaps. Some temporary sensitivity may occur, but it usually subsides as
+                        gums heal and reattach to the teeth.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>3. Can fluorosis stains be removed through scaling?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Scaling can remove surface (extrinsic) stains but not fluorosis, which is an internal
+                        (intrinsic) stain. Fluorosis may require treatments like bleaching, veneers, or crowns for
+                        cosmetic improvement.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>4. Can painful teeth be treated with fillings?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Not always. If the cavity has reached the pulp—the innermost layer of the tooth—simple filling
+                        won’t help. In such cases, root canal treatment or tooth extraction might be necessary. Fillings
+                        are effective only when the damage is limited to the outer layers (enamel and dentin).
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>5. Is placing a cap or crown necessary after root canal treatment (RCT)?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Yes. A crown is recommended after RCT to protect the treated tooth, which may be weaker due to
+                        decay. It prevents fractures and adds durability, especially during chewing.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>6. Can milk teeth need root canal treatment (RCT)?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Yes. If a milk tooth has a deep cavity and is likely to remain in the mouth for some time, an
+                        RCT can preserve it and prevent infection or early loss.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>7. How can I maintain good oral hygiene?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Brush your teeth twice daily with proper technique, rinse after meals, floss regularly, and
+                        schedule routine check-ups with your dentist to maintain healthy teeth and gums.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>8. What is the best age to get braces?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Braces are most effective between ages 12 and 14, when the jaw and teeth are still developing.
+                        However, some cases may benefit from earlier intervention depending on the condition.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>9. Do all wisdom teeth need to be removed?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        No. Wisdom teeth only require removal if they are impacted, infected, or causing pain due to
+                        crowding or damage to adjacent teeth.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>10. Is it important to replace missing teeth after extraction?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Yes. Replacing extracted teeth helps maintain proper bite alignment and prevents adjacent teeth
+                        from shifting, which can affect chewing and overall oral function.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>11. What are the benefits of dental implants?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Dental implants restore both the appearance and functionality of missing teeth. They provide a
+                        stable, natural-looking solution that can improve confidence and overall quality of life.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>12. Which type of toothbrush and toothpaste should I use?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Use a soft or medium-bristled toothbrush with a small head for better reach. Choose a
+                        non-abrasive fluoride toothpaste and replace your toothbrush every three months for optimal
+                        hygiene.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>13. What causes tooth sensitivity?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Tooth sensitivity can result from enamel wear (due to attrition or abrasion), tooth decay,
+                        exposed tooth roots, or hairline cracks in the teeth.
+                    </div>
+                </div>
+                <div class="faq-item pastel-card rounded-xl shadow p-6">
+                    <button
+                        class="faq-question w-full flex justify-between items-center text-left font-semibold text-blue-800 focus:outline-none"
+                        aria-expanded="false">
+                        <span>14. How often should I see a dentist?</span>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-700 hidden">
+                        Visiting your dentist every six months is recommended for routine check-ups, professional
+                        cleaning, and preventive care to maintain good oral health.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Floating Bar -->
+    <div id="cta-bar"
+        class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-full flex space-x-4 px-6 py-3 z-50 transition-opacity opacity-90">
+        <a href="tel:+919862890897"
+            class="flex items-center space-x-1 text-red-600 font-bold hover:underline"><span>🆘</span><span>Emergency</span></a>
+        <a href="appointment.html"
+            class="flex items-center space-x-1 text-blue-600 font-bold hover:underline"><span>📅</span><span>Book
+                Now</span></a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/9862890897" target="_blank" aria-label="WhatsApp Chat" class="whatsapp-float">
+        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g>
+                <circle cx="16" cy="16" r="16" fill="#25D366" />
+                <path
+                    d="M24.5 20.7c-.4-.2-2.3-1.1-2.7-1.2-.4-.2-.7-.2-1 .2-.3.4-.9 1.2-1.1 1.4-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1.1-2-2.5-2.2-2.9-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.6.2-.2.2-.4.3-.7.1-.2 0-.5 0-.7 0-.2-.7-1.7-1-2.3-.3-.6-.6-.5-.8-.5-.2 0-.4 0-.6 0-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.3 1 2.5.1.2 1.7 2.7 4.1 3.7 2.4 1 2.4.7 2.8.7.4 0 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2z"
+                    fill="#fff" />
+            </g>
+        </svg>
+        <span>Chat with us</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white mt-16 rounded-t-2xl" data-aos="fade-up">
+        <div class="container mx-auto py-10 px-4 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="font-bold text-lg mb-2">SAKTHI Dental Clinic</h3>
+                <p class="text-sm">📍 123 Smile Street, Happy Town<br>📞 +91 9862890897<br>✉️ info@SAKTHIdental.com</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Quick Links</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="index.html" class="hover:underline">Home</a></li>
+                    <li><a href="about.html" class="hover:underline">About</a></li>
+                    <li><a href="services.html" class="hover:underline">Treatments</a></li>
+                    <li><button id="privacy-link"
+                            class="hover:underline text-left w-full bg-transparent p-0 m-0 text-inherit">Privacy
+                            Policy</button></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Key Treatments</h3>
+                <ul class="space-y-1 text-sm">
+                    <li>Tooth Extraction</li>
+                    <li>Complete Denture</li>
+                    <li>Tooth Filling</li>
+                    <li>Teeth Cleaning</li>
+                    <li>Bleaching</li>
+                    <li>Orthodontic Treatment</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2">Follow Us</h3>
+                <div class="flex space-x-3">
+                    <a href="#" class="hover:text-blue-300" title="Facebook">📘</a>
+                    <a href="#" class="hover:text-blue-300" title="Instagram">📸</a>
+                    <a href="#" class="hover:text-blue-300" title="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-xs py-4 bg-blue-950 rounded-b-2xl">&copy; 2024 SAKTHI Dental Clinic. All rights
+            reserved.</div>
+    </footer>
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" class="privacy-modal-bg hidden">
+        <div class="privacy-modal-content">
+            <button id="close-privacy-modal"
+                class="absolute top-3 right-3 text-2xl text-gray-400 hover:text-blue-600 font-bold">&times;</button>
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Privacy Policy</h2>
+            <div class="text-gray-700 text-sm space-y-4">
+                <p>At SAKTHI Dental Clinic, we are committed to protecting your privacy. This Privacy Policy outlines
+                    how we collect, use, store, and disclose information from visitors and users of our website.</p>
+                <h3 class="font-bold mt-4">1. Information We Collect</h3>
+                <ul class="list-disc ml-6">
+                    <li>Visit our website</li>
+                    <li>Fill out forms (e.g contact or appointment requests)</li>
+                    <li>Engage with features, services, or resources on our site</li>
+                </ul>
+                <p>Types of information we may collect include: Name, Email address, Phone number. Users can visit our
+                    site anonymously. We only collect personal data when it is voluntarily submitted by users. Refusing
+                    to provide certain personal information may limit access to some site features or services.</p>
+                <p>We may also gather non-personal identification information, such as: Browser type, Device details,
+                    Operating system, Internet service provider, Technical data related to user interaction with the
+                    site.</p>
+                <h3 class="font-bold mt-4">2. Cookies</h3>
+                <p>Our website may use “cookies” to enhance the user experience. Cookies are small files stored on a
+                    user’s device for record-keeping purposes and to track preferences or site activity. Users can set
+                    their browser to refuse cookies or alert them when cookies are being used. Please note that
+                    disabling cookies may affect some site functionality.</p>
+                <h3 class="font-bold mt-4">3. How We Use Your Information</h3>
+                <ul class="list-disc ml-6">
+                    <li>To operate and manage the website: Ensuring content displays properly and services run smoothly.
+                    </li>
+                    <li>To improve customer service: Helping us respond to inquiries more efficiently.</li>
+                    <li>To enhance the website experience: Feedback provided may help us improve content, usability, and
+                        performance.</li>
+                    <li>To communicate via email: We may use the email address to respond to inquiries, appointments, or
+                        service updates.</li>
+                </ul>
+                <h3 class="font-bold mt-4">4. Data Security</h3>
+                <p>We implement appropriate security measures for data collection, storage, and processing to safeguard
+                    your personal information from unauthorized access, alteration, or destruction.</p>
+                <h3 class="font-bold mt-4">5. Information Sharing</h3>
+                <p>We do not sell, trade, or rent personal identification information to third parties. We may share
+                    general demographic data (not linked to any personal information) with trusted partners or
+                    affiliates to improve service delivery and site performance.</p>
+                <h3 class="font-bold mt-4">6. Children’s Privacy</h3>
+                <p>In compliance with the Children’s Online Privacy Protection Act (COPPA), we do not knowingly collect
+                    any personal information from children under the age of 13. Our site is not intended to attract
+                    users below this age group.</p>
+                <h3 class="font-bold mt-4">7. Changes to This Policy</h3>
+                <p>SAKTHI Dental Clinic may update this Privacy Policy from time to time. We encourage users to review
+                    this page periodically to stay informed about how we protect your information.</p>
+                <h3 class="font-bold mt-4">8. Acceptance of Terms</h3>
+                <p>By using this website, you agree to this policy. If you do not accept our Privacy Policy, please do
+                    not use our website. Continued use of the site following any updates will be deemed as your
+                    acceptance of the revised policy.</p>
+                <h3 class="font-bold mt-4">9. Contact Us</h3>
+                <ul class="list-none ml-0">
+                    <li class="flex items-start gap-2"><span class="text-2xl">📍</span> Address: B2/8, SBM Layout,
+                        Anthivadi, Hosur, Tamil Nadu 635109, India</li>
+                    <li class="flex items-start gap-2"><span class="text-2xl">✉️</span> Email:
+                        info@sakthidentalclinic.in</li>
+                    <li class="flex items-start gap-2"><span class="text-2xl">📞</span> Phone: +91 9862890897 / +91
+                        9363298118</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Accordion interactivity for FAQ
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.faq-question').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const answer = btn.parentElement.querySelector('.faq-answer');
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+                    // Collapse all
+                    document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+                    document.querySelectorAll('.faq-question').forEach(b => b.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.faq-question svg').forEach(icon => icon.classList.remove('rotate-180'));
+                    // Expand this one if not already open
+                    if (!expanded) {
+                        answer.classList.remove('hidden');
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.querySelector('svg').classList.add('rotate-180');
+                    }
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const privacyLink = document.getElementById('privacy-link');
+            const privacyModal = document.getElementById('privacy-modal');
+            const closePrivacyModal = document.getElementById('close-privacy-modal');
+            privacyLink.addEventListener('click', function () {
+                privacyModal.classList.remove('hidden');
+            });
+            closePrivacyModal.addEventListener('click', function () {
+                privacyModal.classList.add('hidden');
+            });
+            privacyModal.addEventListener('click', function (e) {
+                if (e.target === privacyModal) privacyModal.classList.add('hidden');
+            });
+        });
+    </script>
+    <!-- AOS Animate On Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 700,
+            once: true,
+            easing: 'ease-out-cubic',
+            offset: 60
+        });
+    </script>
+    <style>
+        .privacy-modal-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.4);
+            overflow-y: auto;
+        }
+
+        .privacy-modal-content {
+            position: relative;
+            margin: 2rem auto;
+            background: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 40rem;
+            width: 100%;
+            padding: 1.5rem;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+    </style>
+</body>
+
+</html>
