@@ -101,6 +101,67 @@ app.post('/api/appointment', async (req, res) => {
     }
 });
 
+// Contact form email template
+function createContactEmailContent(formData) {
+    return `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
+      <div style="background-color: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        <h2 style="color: #1e40af; text-align: center; margin-bottom: 30px;">💬 New Review/Contact Message</h2>
+        <div style="background-color: #f0f9ff; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+          <h3 style="color: #1e40af; margin-top: 0;">Contact Information</h3>
+          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Email:</strong> ${formData.email}</p>
+          <p><strong>Phone:</strong> ${formData.phone}</p>
+          ${formData.message ? `<p><strong>Message:</strong> ${formData.message}</p>` : ''}
+        </div>
+        <div style="background-color: #fef3c7; padding: 15px; border-radius: 8px; margin-top: 20px;">
+          <p style="margin: 0; color: #92400e; font-size: 14px;">
+            <strong>📝 Review Label:</strong> This message was submitted as a review or general inquiry.<br>
+            • Please review and respond as needed.
+          </p>
+        </div>
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb;">
+          <p style="color: #6b7280; font-size: 12px;">
+            This email was sent from the Sakthi Dental Clinic website contact form.
+          </p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Contact form submission endpoint
+app.post('/api/contact', async (req, res) => {
+    try {
+        const { name, email, phone, message } = req.body;
+        if (!name || !email || !phone) {
+            return res.status(400).json({
+                success: false,
+                message: 'Please fill in all required fields'
+            });
+        }
+        const mailOptions = {
+            from: process.env.GMAIL_USER,
+            to: process.env.CLINIC_EMAIL,
+            cc: email, // Send copy to sender
+            replyTo: email,
+            subject: `💬 Review - New Contact/Review Message from ${name}`,
+            html: createContactEmailContent({ name, email, phone, message })
+        };
+        await transporter.sendMail(mailOptions);
+        res.json({
+            success: true,
+            message: 'Thank you for your review/message! We will get back to you soon.'
+        });
+    } catch (error) {
+        console.error('Contact email error:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to send your message. Please try again or contact us directly.'
+        });
+    }
+});
+
 // Serve static files
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
