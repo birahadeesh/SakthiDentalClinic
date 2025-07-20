@@ -99,8 +99,26 @@
                         <textarea id="message" name="message" rows="3"
                             class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
                     </div>
-                    <button type="submit"
-                        class="w-full pastel-btn py-3 rounded-full font-bold text-lg shadow hover:scale-105 transition">Submit</button>
+                    <button type="submit" id="contact-submit-btn"
+                        class="w-full pastel-btn py-3 rounded-full font-bold text-lg shadow hover:scale-105 transition flex items-center justify-center gap-2">
+                        <span id="contact-submit-spinner" class="hidden animate-spin"><svg class="w-5 h-5 text-blue-600"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                            </svg></span>
+                        <span id="contact-submit-text">Submit</span>
+                    </button>
+                    <div id="contact-form-message"
+                        class="hidden text-center p-4 rounded-lg flex flex-col items-center justify-center gap-2">
+                        <span id="contact-form-checkmark" class="hidden"><svg
+                                class="w-8 h-8 text-green-500 animate-bounce" fill="none" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="#d1fae5" />
+                                <path d="M8 12l2 2l4-4" stroke="#10b981" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg></span>
+                        <span id="contact-form-message-text"></span>
+                    </div>
                 </form>
             </div>
             <!-- Clinic Info -->
@@ -296,25 +314,56 @@
     </style>
     <script src="script.js"></script>
     <script>
-        // Contact form validation and dummy submit
+        // Contact form real email sending
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('contact-form');
-            form.addEventListener('submit', function (e) {
+            const submitBtn = document.getElementById('contact-submit-btn');
+            const submitSpinner = document.getElementById('contact-submit-spinner');
+            const submitText = document.getElementById('contact-submit-text');
+            const formMessage = document.getElementById('contact-form-message');
+            const formCheckmark = document.getElementById('contact-form-checkmark');
+            const formMessageText = document.getElementById('contact-form-message-text');
+            form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                // Simple validation
-                const name = form.name.value.trim();
-                const email = form.email.value.trim();
-                const phone = form.phone.value.trim();
-                let valid = true;
-                if (!name) valid = false;
-                if (!email || !/^\S+@\S+\.\S+$/.test(email)) valid = false;
-                if (!phone || !/^\d{10,}$/.test(phone)) valid = false;
-                if (!valid) {
-                    alert('Please fill all required fields with valid information.');
-                    return;
+                // Disable submit button and show loading
+                submitBtn.disabled = true;
+                submitSpinner.classList.remove('hidden');
+                submitText.classList.add('hidden');
+                // Get form data
+                const formData = {
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    phone: form.phone.value.trim(),
+                    message: form.message.value.trim()
+                };
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const result = await response.json();
+                    formMessage.classList.remove('hidden');
+                    if (result.success) {
+                        formMessage.className = 'text-center p-4 rounded-lg bg-green-100 text-green-800 border border-green-200 flex flex-col items-center justify-center gap-2';
+                        formMessageText.textContent = result.message;
+                        formCheckmark.classList.remove('hidden');
+                        form.reset();
+                    } else {
+                        formMessage.className = 'text-center p-4 rounded-lg bg-red-100 text-red-800 border border-red-200 flex flex-col items-center justify-center gap-2';
+                        formMessageText.textContent = result.message;
+                        formCheckmark.classList.add('hidden');
+                    }
+                } catch (error) {
+                    formMessage.classList.remove('hidden');
+                    formMessage.className = 'text-center p-4 rounded-lg bg-red-100 text-red-800 border border-red-200 flex flex-col items-center justify-center gap-2';
+                    formMessageText.textContent = 'Network error. Please try again or contact us directly.';
+                    formCheckmark.classList.add('hidden');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitSpinner.classList.add('hidden');
+                    submitText.classList.remove('hidden');
                 }
-                alert('Thank you for contacting us! We will get back to you soon.');
-                form.reset();
             });
         });
     </script>

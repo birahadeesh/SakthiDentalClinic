@@ -5,12 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAKTHI Dental Clinic | Home</title>
+    <!-- Google Fonts: Inter and Quicksand -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand:wght@600;700&display=swap"
+        rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <!-- AOS Animate On Scroll CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        h1,
+        h2,
+        h3 {
+            font-family: 'Quicksand', Inter, Arial, sans-serif !important;
+        }
+    </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
@@ -30,10 +41,8 @@
                 <li><a href="contact.html" class="hover:text-blue-600">Contact</a></li>
                 <li><a href="faq.html" class="hover:text-blue-600">FAQs</a></li>
             </ul>
-            <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">☰</button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
             <ul class="space-y-2 font-medium">
                 <li><a href="index.html" class="block hover:text-blue-600">Home</a></li>
@@ -52,23 +61,32 @@
         <div class="relative rounded-2xl shadow-lg overflow-hidden" id="hero-carousel"
             aria-label="Hero Banner Carousel">
             <div class="carousel-slides">
-                <img src="Banner-Img-1.jpg" alt="Clinic Banner 1" class="carousel-img" />
-                <img src="Banner-Img-2.jpg" alt="Clinic Banner 2" class="carousel-img" />
-                <img src="Banner-Img-3.jpg" alt="Clinic Banner 3" class="carousel-img" />
+                <picture>
+                    <source srcset="Banner-Img-1.webp" type="image/webp">
+                    <img src="Banner-Img-1.jpg" alt="Clinic Banner 1" class="carousel-img" loading="lazy" />
+                </picture>
+                <picture>
+                    <source srcset="Banner-Img-2.webp" type="image/webp">
+                    <img src="Banner-Img-2.jpg" alt="Clinic Banner 2" class="carousel-img" loading="lazy" />
+                </picture>
+                <picture>
+                    <source srcset="Banner-Img-3.webp" type="image/webp">
+                    <img src="Banner-Img-3.jpg" alt="Clinic Banner 3" class="carousel-img" loading="lazy" />
+                </picture>
             </div>
             <!-- Overlayed Content -->
             <div class="carousel-overlay flex flex-col items-center justify-center text-center px-4">
-                <h1 class="text-3xl md:text-5xl font-bold text-white drop-shadow mb-4">Specialized Dental Care for
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white drop-shadow mb-4">Specialized Dental Care for
                     Women, Children & Families</h1>
                 <p class="text-lg md:text-xl text-white drop-shadow mb-8 max-w-2xl">Experience compassionate, expert-led
                     dental services tailored to your needs—all in a modern and welcoming environment.</p>
                 <div class="flex flex-col sm:flex-row gap-4">
                     <a href="appointment.html"
-                        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg">📅
-                        Fix an Appointment</a>
+                        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg icon-interactive"
+                        aria-label="Fix an Appointment">📅 Fix an Appointment</a>
                     <a href="tel:+919862890897"
-                        class="inline-block bg-red-600 text-white px-6 py-3 rounded-full shadow hover:bg-red-700 transition font-semibold text-lg">🆘
-                        Emergency Dental Support</a>
+                        class="inline-block bg-red-600 text-white px-6 py-3 rounded-full shadow hover:bg-red-700 transition font-semibold text-lg icon-interactive"
+                        aria-label="Emergency Dental Support">🆘 Emergency Dental Support</a>
                 </div>
             </div>
             <!-- Carousel Arrows -->
@@ -230,103 +248,133 @@
         });
     </script>
 
+    <!-- After Hero Section -->
+    <section class="container mx-auto py-8 px-4 md:px-0">
+        <div class="w-full overflow-hidden leading-none">
+            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+                <path d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#e0f7fa" />
+            </svg>
+        </div>
+    </section>
     <!-- Welcome Message / Assurance Banner -->
-    <section class="container mx-auto py-8 px-4 md:px-0" data-aos="fade-up">
-        <div class="bg-blue-50 rounded-2xl p-8 text-center">
+    <section class="container mx-auto py-16 px-4 md:px-0 bg-blue-50 rounded-2xl shadow" data-aos="fade-up">
+        <div class="text-center">
             <h2 class="text-2xl font-bold text-blue-800 mb-2">You are always in safe hands.</h2>
             <p class="text-lg text-blue-700">We are ready to help, anytime.</p>
         </div>
     </section>
-
+    <div class="w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+            <path d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#e0f7fa" />
+        </svg>
+    </div>
     <!-- Why Choose SAKTHI Dental Clinic? -->
-    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Why Choose SAKTHI Dental Clinic?</h2>
+    <section class="container mx-auto py-20 px-4 md:px-0 bg-teal-50 rounded-2xl shadow" data-aos="fade-up">
+        <h2 class="text-3xl font-bold md:font-extrabold text-center text-blue-800 mb-8">Why Choose SAKTHI Dental Clinic?
+        </h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
-                <span class="text-4xl mb-4 block">🏥</span>
-                <h3 class="font-bold text-lg mb-2">All-in-One Care</h3>
+                <span class="icon-interactive text-4xl mb-4 block">🏥</span>
+                <h3 class="font-bold md:font-semibold text-lg mb-2">All-in-One Care</h3>
                 <p class="text-gray-600">From general dentistry to specialized treatments, everything under one roof.
                 </p>
             </div>
             <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
-                <span class="text-4xl mb-4 block">👨‍⚕️</span>
+                <span class="icon-interactive text-4xl mb-4 block">👨‍⚕️</span>
                 <h3 class="font-bold text-lg mb-2">Experienced Doctors</h3>
                 <p class="text-gray-600">Our dentists are professionally trained and committed to personalized patient
                     care.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
-                <span class="text-4xl mb-4 block">❤️</span>
+                <span class="icon-interactive text-4xl mb-4 block">❤️</span>
                 <h3 class="font-bold text-lg mb-2">Patient-Centric Approach</h3>
                 <p class="text-gray-600">We prioritize comfort, safety, and transparency in every treatment we offer.
                 </p>
             </div>
             <div class="bg-white rounded-xl shadow p-6 text-center" data-aos="zoom-in">
-                <span class="text-4xl mb-4 block">🔬</span>
+                <span class="icon-interactive text-4xl mb-4 block">🔬</span>
                 <h3 class="font-bold text-lg mb-2">Technology-Driven Services</h3>
                 <p class="text-gray-600">Modern tools and equipment ensure precision and safety.</p>
             </div>
         </div>
     </section>
-
+    <div class="w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+            <path d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#e0f7fa" />
+        </svg>
+    </div>
     <!-- Our Core Treatments -->
-    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
-        <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Explore Our Services</h2>
+    <section class="container mx-auto py-20 px-4 md:px-0 bg-pink-50 rounded-2xl shadow" data-aos="fade-up">
+        <h2 class="text-3xl font-bold md:font-extrabold text-center text-blue-800 mb-8">Explore Our Services</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">🦷</span>
+                <span class="icon-interactive text-3xl mb-4 block">🦷</span>
                 <h3 class="font-bold text-lg mb-2">Tooth Extraction</h3>
                 <p class="text-gray-600">Safe and painless removal of impacted or decayed teeth.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">🦷</span>
+                <span class="icon-interactive text-3xl mb-4 block">🦷</span>
                 <h3 class="font-bold text-lg mb-2">Artificial Complete Denture</h3>
                 <p class="text-gray-600">Full mouth replacement to restore confidence and function.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">🦷</span>
+                <span class="icon-interactive text-3xl mb-4 block">🦷</span>
                 <h3 class="font-bold text-lg mb-2">Tooth Filling</h3>
                 <p class="text-gray-600">Composite fillings for cavity treatment and tooth restoration.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">🪥</span>
+                <span class="icon-interactive text-3xl mb-4 block">🪥</span>
                 <h3 class="font-bold text-lg mb-2">Teeth Cleaning or Scaling</h3>
                 <p class="text-gray-600">Preventive care to remove plaque and protect gums.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">😁</span>
+                <span class="icon-interactive text-3xl mb-4 block">😁</span>
                 <h3 class="font-bold text-lg mb-2">Bleaching</h3>
                 <p class="text-gray-600">Cosmetic whitening treatments for a brighter smile.</p>
             </div>
             <div class="bg-white rounded-xl shadow p-6" data-aos="zoom-in">
-                <span class="text-3xl mb-4 block">🦷</span>
+                <span class="icon-interactive text-3xl mb-4 block">🦷</span>
                 <h3 class="font-bold text-lg mb-2">Orthodontic Treatment</h3>
                 <p class="text-gray-600">Braces and aligners to straighten and align teeth.</p>
             </div>
         </div>
         <div class="text-center mt-8">
             <a href="services.html"
-                class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg">View
+                class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full shadow hover:bg-blue-700 transition font-semibold text-lg icon-interactive">View
                 Full List of Treatments</a>
         </div>
     </section>
-
+    <div class="w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+            <path d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#e0f7fa" />
+        </svg>
+    </div>
     <!-- Testimonials -->
-    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+    <section class="container mx-auto py-20 px-4 md:px-0 bg-blue-50 rounded-2xl shadow" data-aos="fade-up">
         <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">What Our Patients Say</h2>
         <div class="max-w-4xl mx-auto">
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center" data-aos="fade-up"
+                    data-aos-delay="0">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Avatar"
+                        class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200 shadow-sm" loading="lazy">
                     <p class="text-gray-700 italic mb-4">"The doctors are extremely kind and attentive. My braces
                         treatment is progressing really well. 5/5."</p>
                     <p class="font-semibold text-blue-700">– Manisha M</p>
                 </div>
-                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avatar"
+                        class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200 shadow-sm" loading="lazy">
                     <p class="text-gray-700 italic mb-4">"I got my teeth cleaned and whitened here, and the results were
                         amazing. The staff is so humble and professional. I've recommended SAKTHI Dental Clinic to my
                         entire family."</p>
                     <p class="font-semibold text-blue-700">— Mr. Arun Kumar</p>
                 </div>
-                <div class="bg-white rounded-xl shadow p-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Avatar"
+                        class="w-16 h-16 rounded-full mb-4 border-2 border-blue-200 shadow-sm" loading="lazy">
                     <p class="text-gray-700 italic mb-4">"Their attention to detail is outstanding. My daughter needed
                         braces and the entire process from consultation to regular follow ups has been so smooth. Really
                         grateful for their care."</p>
@@ -335,9 +383,13 @@
             </div>
         </div>
     </section>
-
+    <div class="w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12 md:h-20">
+            <path d="M0,32 C360,80 1080,0 1440,48 L1440,80 L0,80 Z" fill="#e0f7fa" />
+        </svg>
+    </div>
     <!-- Clinic Highlights / Amenities -->
-    <section class="container mx-auto py-12 px-4 md:px-0" data-aos="fade-up">
+    <section class="container mx-auto py-20 px-4 md:px-0 bg-teal-50 rounded-2xl shadow" data-aos="fade-up">
         <h2 class="text-3xl font-bold text-center text-blue-800 mb-8">Clinic Facilities</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="bg-white rounded-xl shadow p-6 flex items-center space-x-4" data-aos="zoom-in">
@@ -377,10 +429,11 @@
     <div id="cta-bar"
         class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-white shadow-lg rounded-full flex space-x-4 px-6 py-3 z-50 transition-opacity opacity-90">
         <a href="tel:+919862890897"
-            class="flex items-center space-x-1 text-red-600 font-bold hover:underline"><span>🆘</span><span>Emergency</span></a>
+            class="flex items-center space-x-1 text-red-600 font-bold hover:underline icon-interactive"
+            aria-label="Emergency Dental Support"><span class="icon-interactive">🆘</span><span>Emergency</span></a>
         <a href="#appointment"
-            class="flex items-center space-x-1 text-blue-600 font-bold hover:underline"><span>📅</span><span>Book
-                Now</span></a>
+            class="flex items-center space-x-1 text-blue-600 font-bold hover:underline icon-interactive"
+            aria-label="Book an Appointment"><span class="icon-interactive">📅</span><span>Book Now</span></a>
     </div>
 
     <!-- Floating WhatsApp Button -->
@@ -396,12 +449,26 @@
         <span>Chat with us</span>
     </a>
 
+    <!-- Subtle Floating Tooth SVG Background -->
+    <div class="fixed bottom-24 right-8 z-0 pointer-events-none select-none opacity-20" data-aos="fade-up"
+        aria-hidden="true" style="width: 120px; height: 120px;">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6c-7.5 0-14 6.5-14 14 0 10.5 10.5 28 14 28s14-17.5 14-28c0-7.5-6.5-14-14-14z" fill="#e0f7fa"
+                stroke="#bfcfff" stroke-width="2" />
+            <ellipse cx="32" cy="20" rx="6" ry="3" fill="#bfcfff" fill-opacity="0.5" />
+        </svg>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-blue-900 text-white mt-16 rounded-t-2xl">
+    <footer class="bg-blue-900 text-white mt-16 rounded-t-2xl" data-aos="fade-up">
         <div class="container mx-auto py-10 px-4 md:px-0 grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
                 <h3 class="font-bold text-lg mb-2">SAKTHI Dental Clinic</h3>
-                <p class="text-sm">📍 123 Smile Street, Happy Town<br>📞 +91 9862890897<br>✉️ info@SAKTHIdental.com</p>
+                <p class="text-sm flex items-center gap-2"><span class="icon-interactive">📍</span>123 Smile Street,
+                    Happy Town</p>
+                <p class="text-sm flex items-center gap-2"><span class="icon-interactive">📞</span>+91 9862890897</p>
+                <p class="text-sm flex items-center gap-2"><span class="icon-interactive">✉️</span>info@SAKTHIdental.com
+                </p>
             </div>
             <div>
                 <h3 class="font-bold text-lg mb-2">Quick Links</h3>
@@ -409,9 +476,13 @@
                     <li><a href="index.html" class="hover:underline">Home</a></li>
                     <li><a href="about.html" class="hover:underline">About</a></li>
                     <li><a href="services.html" class="hover:underline">Treatments</a></li>
+                    <li><a href="appointment.html" class="hover:underline">Appointment</a></li>
+                    <li><a href="testimonials.html" class="hover:underline">Testimonials</a></li>
+                    <li><a href="contact.html" class="hover:underline">Contact</a></li>
+                    <li><a href="faq.html" class="hover:underline">FAQs</a></li>
                     <li><button id="privacy-link"
-                            class="hover:underline text-left w-full bg-transparent p-0 m-0 text-inherit">Privacy
-                            Policy</button></li>
+                            class="hover:underline text-left w-full bg-transparent p-0 m-0 text-inherit focus:outline-blue-400"
+                            aria-label="Open Privacy Policy">Privacy Policy</button></li>
                 </ul>
             </div>
             <div>
@@ -427,14 +498,17 @@
             </div>
             <div>
                 <h3 class="font-bold text-lg mb-2">Follow Us</h3>
-                <div class="flex space-x-3">
-                    <a href="#" class="hover:text-blue-300" title="Facebook">📘</a>
-                    <a href="#" class="hover:text-blue-300" title="Instagram">📸</a>
-                    <a href="#" class="hover:text-blue-300" title="YouTube">📺</a>
+                <div class="flex space-x-3 mt-2">
+                    <a href="#" class="hover:text-blue-300 icon-interactive focus:outline-blue-400" title="Facebook"
+                        aria-label="Facebook">📘</a>
+                    <a href="#" class="hover:text-blue-300 icon-interactive focus:outline-blue-400" title="Instagram"
+                        aria-label="Instagram">📸</a>
+                    <a href="#" class="hover:text-blue-300 icon-interactive focus:outline-blue-400" title="YouTube"
+                        aria-label="YouTube">📺</a>
                 </div>
             </div>
         </div>
-        <div class="text-center text-xs py-4 bg-blue-950 rounded-b-2xl">&copy; 2024 SAKTHI Dental Clinic. All rights
+        <div class="text-center text-xs py-4 bg-blue-950 rounded-b-2xl">&copy; 2025 SAKTHI Dental Clinic. All rights
             reserved.</div>
     </footer>
 

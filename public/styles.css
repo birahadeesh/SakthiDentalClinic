@@ -83,3 +83,36 @@
 }
 
 /* Add any additional custom styles below */
+
+/* Icon microinteractions */
+.icon-interactive svg {
+    transition: transform 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.icon-interactive:hover svg,
+.icon-interactive:focus svg {
+    transform: scale(1.15) rotate(-3deg);
+    color: #2563eb;
+    /* Tailwind blue-600 */
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.10);
+}
+
+/* Card microinteractions */
+.bg-white.rounded-xl.shadow:hover,
+.bg-white.rounded-xl.shadow:focus {
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.10), 0 1.5px 6px rgba(0, 0, 0, 0.04);
+    transform: translateY(-4px) scale(1.03);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Button microinteractions */
+.icon-interactive,
+.icon-interactive:focus {
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.icon-interactive:hover,
+.icon-interactive:focus {
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
+    transform: translateY(-2px) scale(1.05);
+}
