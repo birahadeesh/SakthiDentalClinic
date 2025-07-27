@@ -2,13 +2,10 @@
     "name": "sakthi-dental-clinic",
     "version": "1.0.0",
     "description": "Sakthi Dental Clinic Website",
-    "main": "server.js",
+    "main": "index.html",
     "scripts": {
-        "start": "node server.js",
+        "start": "echo 'Static site - no server needed'",
         "build": "echo 'Static site - no build needed'"
-    },
-    "dependencies": {
-        "express": "^4.18.2"
     },
     "keywords": [
         "dental",
