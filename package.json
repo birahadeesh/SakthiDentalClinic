@@ -1,0 +1,17 @@
+{
+    "name": "sakthi-dental-clinic",
+    "version": "1.0.0",
+    "description": "Sakthi Dental Clinic Website",
+    "main": "index.html",
+    "scripts": {
+        "start": "echo 'Static site - no server needed'",
+        "build": "echo 'Static site - no build needed'"
+    },
+    "keywords": [
+        "dental",
+        "clinic",
+        "website"
+    ],
+    "author": "Sakthi Dental Clinic",
+    "license": "MIT"
+}
