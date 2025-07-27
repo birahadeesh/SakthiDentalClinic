@@ -4,12 +4,28 @@ A modern, responsive dental clinic website built with HTML, CSS, and JavaScript.
 
 ## 🌟 Features
 
+<<<<<<< HEAD
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Modern UI**: Clean, professional design with smooth animations
 - **Contact Forms**: Integrated with Formspree for email handling
 - **Interactive Elements**: Carousels, accordions, and smooth scrolling
 - **Accessibility**: ARIA labels and semantic HTML
 - **Performance**: Optimized images and lazy loading
+=======
+- **Responsive Design** - Works perfectly on all devices
+- **Professional UI** - Clean, modern design with pastel colors
+- **Appointment Booking** - Online appointment form with email notifications
+- **Interactive Elements** - Hero carousel, testimonials, floating WhatsApp button
+- **Contact Integration** - Google Maps integration with directions
+- **Privacy Policy** - Modal popup with comprehensive privacy information
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (version 14 or higher)
+- Gmail account for email functionality
+
+>>>>>>> 3e3e44b759cf4cd72bb7dc117a42119a479153d7
 
 ## 📁 Project Structure
 
@@ -101,6 +117,7 @@ The website uses a blue color scheme. To change colors:
 - **Icons**: Emoji and SVG icons
 - **Fonts**: Google Fonts (Inter, Quicksand)
 
+<<<<<<< HEAD
 ## 📋 Pages Overview
 
 1. **Home** (`index.html`): Hero carousel, services overview, testimonials
@@ -143,3 +160,6 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 **Note**: Remember to update the Formspree IDs before deploying to make the forms functional! 
+=======
+**Made with ❤️ for Sakthi Dental Clinic** 
+>>>>>>> 3e3e44b759cf4cd72bb7dc117a42119a479153d7
