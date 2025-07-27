@@ -44,61 +44,6 @@ public/
 └── images/            # All website images
 ```
 
-## 🚀 Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/sakthi-dental-clinic.git
-   cd sakthi-dental-clinic
-   ```
-
-2. **Open in browser**
-   - Simply open `public/index.html` in your web browser
-   - Or use a local server: `python -m http.server 8000`
-
-## 📧 Form Setup (Required)
-
-This website uses **Formspree** for handling contact and appointment forms. You need to set up your own Formspree account:
-
-### Step 1: Create Formspree Account
-1. Go to [formspree.io](https://formspree.io)
-2. Sign up for a free account
-3. Create a new form
-
-### Step 2: Get Your Form ID
-1. After creating a form, you'll get a form ID like: `xrgjqjqj`
-2. Your form endpoint will be: `https://formspree.io/f/xrgjqjqj`
-
-### Step 3: Update the Forms
-Replace `YOUR_FORMSPREE_ID` in these files:
-- `public/appointment.html` (line with `action="https://formspree.io/f/YOUR_FORMSPREE_ID"`)
-- `public/contact.html` (line with `action="https://formspree.io/f/YOUR_FORMSPREE_ID"`)
-
-**Example:**
-```html
-<!-- Change this: -->
-<form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-
-<!-- To this: -->
-<form action="https://formspree.io/f/xrgjqjqj" method="POST">
-```
-
-## 🎨 Customization
-
-### Colors
-The website uses a blue color scheme. To change colors:
-1. Update Tailwind classes in HTML files
-2. Modify `styles.css` for custom colors
-
-### Content
-- Update text content directly in HTML files
-- Replace images in the `public/` folder
-- Update contact information in headers and footers
-
-### Styling
-- Main styles: Tailwind CSS classes in HTML
-- Custom styles: `public/styles.css`
-- Animations: AOS (Animate On Scroll) library
 
 ## 📱 Responsive Features
 
@@ -128,24 +73,6 @@ The website uses a blue color scheme. To change colors:
 6. **Testimonials** (`testimonials.html`): Patient reviews carousel
 7. **FAQ** (`faq.html`): Accordion-style frequently asked questions
 
-## 🌐 Deployment
-
-### GitHub Pages
-1. Push to GitHub
-2. Go to Settings > Pages
-3. Select source branch (usually `main`)
-4. Your site will be available at `https://username.github.io/repository-name`
-
-### Netlify
-1. Connect your GitHub repository
-2. Deploy automatically on push
-3. Custom domain support available
-
-### Vercel
-1. Import your GitHub repository
-2. Automatic deployments
-3. Great performance and analytics
-
 ## 📞 Support
 
 For questions or issues:
@@ -153,13 +80,6 @@ For questions or issues:
 - Review the code comments
 - Contact through the website forms
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ---
 
-**Note**: Remember to update the Formspree IDs before deploying to make the forms functional! 
-=======
 **Made with ❤️ for Sakthi Dental Clinic** 
->>>>>>> 3e3e44b759cf4cd72bb7dc117a42119a479153d7
